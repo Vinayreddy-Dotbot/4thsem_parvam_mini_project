@@ -1,0 +1,34 @@
+<div class="delete-wrapper">
+    <div class="delete-card">
+        <div class="delete-icon-shield">
+            <i class="fa-solid fa-door-open"></i>
+        </div>
+
+        <h2 class="delete-title">Confirm Patient Discharge</h2>
+        <p class="delete-subtitle">This will move the admission status to discharged while keeping patient history in the database.</p>
+
+        <div class="target-profile-card">
+            <div class="target-avatar">
+                <i class="fa-solid fa-hospital-user"></i>
+            </div>
+            <div class="target-details">
+                <h3 class="target-name">{{PATIENT_NAME}}</h3>
+                <span class="target-email">{{DOCTOR_NAME}} - Ward {{WARD}}</span>
+                <span class="target-badge">Patient ID: #{{PATIENT_ID}}</span>
+            </div>
+        </div>
+
+        <form action="discharge" method="POST" class="delete-action-form">
+            <input type="hidden" name="id" value="{{PATIENT_ID}}">
+
+            <div class="delete-actions-panel">
+                <a href="detail?id={{PATIENT_ID}}" class="btn btn-secondary"><i class="fa-solid fa-arrow-left"></i> Cancel</a>
+                <button type="submit" class="btn btn-danger"><i class="fa-solid fa-door-open"></i> Confirm Discharge</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+    document.getElementById('nav-list').classList.add('active');
+</script>

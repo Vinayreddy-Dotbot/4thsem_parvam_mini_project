@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title desc">
+  <title id="title">MediTrack Logo</title>
+  <desc id="desc">Hospital cross and heart pulse logo for patient records.</desc>
+  <rect width="128" height="128" rx="24" fill="#eef7f6"/>
+  <rect x="8" y="8" width="112" height="112" rx="20" fill="#ffffff" stroke="#bfd6d2" stroke-width="4"/>
+  <path d="M56 30h16v25h25v16H72v27H56V71H31V55h25V30z" fill="#0f766e"/>
+  <path d="M25 84h18l9-17 12 29 10-20h29" fill="none" stroke="#e11d48" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="94" cy="34" r="10" fill="#4f46e5"/>
+</svg>

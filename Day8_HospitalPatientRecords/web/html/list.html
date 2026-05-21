@@ -1,0 +1,31 @@
+<div class="list-container patient-list-shell">
+    <div class="list-header-panel patient-list-hero">
+        <div class="list-title-desc">
+            <span class="hero-kicker dark-kicker"><i class="fa-solid fa-bed-pulse"></i> 3D patient records</span>
+            <h2 class="list-title">Patient List</h2>
+            <p class="list-subtitle">Search by patient name, ID, phone, blood group, doctor, department, ward, appointment, or natural language query.</p>
+        </div>
+
+        <form action="list" method="GET" class="search-form patient-search-form">
+            <div class="search-box patient-search-box">
+                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                <input type="text" name="search" class="search-input" placeholder="Show admitted patients..." value="{{SEARCH_QUERY}}">
+                <button type="submit" class="btn btn-primary search-btn"><i class="fa-solid fa-filter"></i> Search</button>
+            </div>
+            {{RESET_BUTTON}}
+        </form>
+    </div>
+
+    <div class="patient-record-stack">
+        {{PATIENT_ROWS}}
+    </div>
+
+    <div class="pagination-footer">
+        <div class="pagination-info">{{PAGINATION_INFO}}</div>
+        <div class="pagination-controls">{{PAGINATION_CONTROLS}}</div>
+    </div>
+</div>
+
+<script>
+    document.getElementById('nav-list').classList.add('active');
+</script>

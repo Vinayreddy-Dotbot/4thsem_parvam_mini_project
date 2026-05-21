@@ -1,0 +1,72 @@
+<div class="detail-layout">
+    <section class="detail-header">
+        <div class="detail-heading-group">
+            <div class="patient-avatar"><i class="fa-solid fa-hospital-user"></i></div>
+            <div>
+                <span class="badge-id">#{{PATIENT_ID}}</span>
+                <h2 class="detail-title">{{PATIENT_NAME}}</h2>
+                <p class="detail-subtitle">{{PATIENT_AGE}} years, {{PATIENT_GENDER}} - Blood {{PATIENT_BLOOD}}</p>
+            </div>
+        </div>
+        <div class="detail-actions">
+            <a href="list" class="btn btn-secondary"><i class="fa-solid fa-arrow-left"></i> List</a>
+            <a href="edit?id={{PATIENT_ID}}" class="btn btn-primary"><i class="fa-solid fa-pen"></i> Edit</a>
+            {{DISCHARGE_ACTION}}
+        </div>
+    </section>
+
+    <section class="detail-grid">
+        <div class="detail-card">
+            <h3 class="section-title">Patient Detail</h3>
+            <dl class="detail-list">
+                <dt>Phone</dt><dd>{{PATIENT_PHONE}}</dd>
+                <dt>Address</dt><dd>{{PATIENT_ADDRESS}}</dd>
+                <dt>Admitted At</dt><dd>{{ADMITTED_AT}}</dd>
+                <dt>Priority</dt><dd><span class="status-chip {{STATUS_CLASS}}">{{PRIORITY_LABEL}}</span></dd>
+            </dl>
+        </div>
+
+        <div class="detail-card">
+            <h3 class="section-title">Admission</h3>
+            <dl class="detail-list">
+                <dt>Doctor</dt><dd>{{DOCTOR_NAME}}</dd>
+                <dt>Department</dt><dd>{{DOCTOR_DEPT}}</dd>
+                <dt>Ward</dt><dd>{{WARD}}</dd>
+                <dt>Status</dt><dd><span class="status-chip {{STATUS_CLASS}}">{{STATUS}}</span></dd>
+            </dl>
+        </div>
+
+        <div class="detail-card">
+            <h3 class="section-title">Appointment</h3>
+            <dl class="detail-list">
+                <dt>Date & Time</dt><dd>{{APPOINTMENT_AT}}</dd>
+                <dt>Notes</dt><dd>{{APPOINTMENT_NOTES}}</dd>
+            </dl>
+        </div>
+    </section>
+
+    <section class="ai-detail-grid">
+        <div class="ai-detail-card">
+            <h3><i class="fa-solid fa-notes-medical"></i> AI Patient Health Summary Generator</h3>
+            <p>{{AI_SUMMARY}}</p>
+        </div>
+        <div class="ai-detail-card">
+            <h3><i class="fa-solid fa-chart-line"></i> AI Disease Risk Prediction</h3>
+            <p>Predicted current risk level: <strong>{{RISK_LEVEL}}</strong>.</p>
+            <p class="ai-note">Reason: {{RISK_REASONS}}</p>
+        </div>
+        <div class="ai-detail-card">
+            <h3><i class="fa-solid fa-user-doctor"></i> AI Doctor Recommendation System</h3>
+            <p>{{AI_DOCTOR_RECOMMENDATION}}</p>
+        </div>
+        <div class="ai-detail-card">
+            <h3><i class="fa-solid fa-bell"></i> AI Emergency Alert & Priority Detection</h3>
+            <p>This record is marked as <strong>{{PRIORITY_LABEL}}</strong>.</p>
+            <p class="ai-note">{{AI_EMERGENCY_ACTION}}</p>
+        </div>
+    </section>
+</div>
+
+<script>
+    document.getElementById('nav-list').classList.add('active');
+</script>

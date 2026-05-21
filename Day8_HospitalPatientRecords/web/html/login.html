@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Patient Records | Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/hospital_app/web/css/style.css?v=4.1.2">
+</head>
+<body class="login-body">
+    <div class="login-card">
+        <div class="window-header">
+            <div class="window-dots">
+                <span class="window-dot dot-red"></span>
+                <span class="window-dot dot-yellow"></span>
+                <span class="window-dot dot-green"></span>
+            </div>
+            <div class="terminal-id">MEDITRACK_SECURE</div>
+        </div>
+
+        <div class="brand-header">
+            <img src="/hospital_app/web/images/meditrack_logo.svg" alt="MediTrack Logo" class="brand-logo-img">
+            <h1 class="brand-title">MediTrack Admin</h1>
+            <p class="brand-subtitle">Secure admissions, patient records, and discharge workflow console.</p>
+        </div>
+
+        <form action="/hospital_app/login" method="post">
+            <div class="form-group">
+                <label class="form-label" for="username"><i class="fa-solid fa-user-shield"></i> Username</label>
+                <input class="form-input" type="text" id="username" name="username" placeholder="admin" required autofocus autocomplete="off">
+            </div>
+
+            <div class="form-group">
+                <label class="form-label" for="password"><i class="fa-solid fa-key"></i> Password</label>
+                <input class="form-input" type="password" id="password" name="password" placeholder="admin123" required>
+            </div>
+
+            {{ERROR_MESSAGE}}
+
+            <button type="submit" class="btn btn-primary login-btn">
+                <i class="fa-solid fa-shield-halved"></i> Login
+            </button>
+        </form>
+
+        <div class="credentials-tip">
+            Username: <strong>admin</strong> | Password: <strong>admin123</strong>
+        </div>
+    </div>
+</body>
+</html>

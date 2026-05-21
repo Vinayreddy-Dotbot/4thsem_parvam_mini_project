@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Patient Records</title>
+    <link rel="icon" type="image/svg+xml" href="/hospital_app/web/images/meditrack_logo.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/hospital_app/web/css/style.css?v=4.1.2">
+    <script src="/hospital_app/web/js/main.js"></script>
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="sidebar-brand">
+                <img src="/hospital_app/web/images/meditrack_logo.svg" alt="MediTrack Logo" class="brand-logo">
+                <span class="brand-name">MediTrack</span>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="home" id="nav-home" class="nav-item">
+                    <i class="fa-solid fa-house-medical nav-icon"></i>
+                    <span>Home</span>
+                </a>
+                <a href="register" id="nav-register" class="nav-item">
+                    <i class="fa-solid fa-user-plus nav-icon"></i>
+                    <span>Register Patient</span>
+                </a>
+                <a href="list" id="nav-list" class="nav-item">
+                    <i class="fa-solid fa-bed-pulse nav-icon"></i>
+                    <span>Patient List</span>
+                </a>
+                <a href="ai-insights" id="nav-ai" class="nav-item">
+                    <i class="fa-solid fa-brain nav-icon"></i>
+                    <span>AI Insights</span>
+                </a>
+                <a href="logout" id="nav-logout" class="nav-item logout-link">
+                    <i class="fa-solid fa-power-off nav-icon"></i>
+                    <span>Log Out</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <span class="version-tag">DB: hospital_patient_db</span>
+                <span class="version-tag">XAMPP MySQL: 3306</span>
+                <span class="version-tag font-mono">Tomcat: 8080</span>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="top-header">
+                <div class="header-search-hint">
+                    <span class="session-badge"><i class="fa-solid fa-circle"></i> Live Records</span>
+                    <span class="env-badge"><i class="fa-solid fa-shield-heart"></i> Patient Care Mode</span>
+                </div>
+
+                <div class="user-profile">
+                    <div class="avatar-icon">
+                        <i class="fa-solid fa-user-doctor"></i>
+                    </div>
+                    <div class="user-details">
+                        <span class="user-name">MediTrack Admin</span>
+                        <span class="user-role">Admissions Desk</span>
+                    </div>
+                </div>
+            </header>
+
+            <div class="content-body">
+                {{CONTENT}}
+            </div>
+        </main>
+    </div>
+</body>
+</html>

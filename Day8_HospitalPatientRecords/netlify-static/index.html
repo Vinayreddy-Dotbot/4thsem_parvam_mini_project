@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hospital Patient Records</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <a class="brand" href="#home" aria-label="Hospital records home">
+      <img src="assets/meditrack_logo.svg" alt="">
+      <span>
+        <strong>MediTrack</strong>
+        <small>Netlify Demo</small>
+      </span>
+    </a>
+    <nav class="nav">
+      <a href="#home" class="nav-link active" data-view="home">Home</a>
+      <a href="#register" class="nav-link" data-view="register">Register Patient</a>
+      <a href="#records" class="nav-link" data-view="records">Patient List</a>
+      <a href="#ai" class="nav-link" data-view="ai">AI Insights</a>
+    </nav>
+    <div class="side-card">
+      <span>Stack</span>
+      <strong>Static SPA</strong>
+      <small>Runs on Netlify with browser localStorage.</small>
+    </div>
+  </aside>
+
+  <main class="app">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">Hospital Patient Records</p>
+        <h1>Manage patients, doctors, admissions and AI insights.</h1>
+      </div>
+      <div class="search-box">
+        <input id="smartSearch" type="search" placeholder="Try: admitted patients, cardiology, HP-1001">
+        <button id="searchBtn" type="button">Search</button>
+      </div>
+    </header>
+
+    <section id="home" class="view active-view">
+      <div class="hero-grid">
+        <article class="hero-card">
+          <p class="eyebrow">Live Dashboard</p>
+          <h2>Hospital workflow in one clean web app.</h2>
+          <p>Register patients, assign doctors, schedule appointments, update admission status, discharge records and review AI-oriented insights.</p>
+          <div class="hero-actions">
+            <a class="button primary" href="#register" data-view="register">Register Patient</a>
+            <a class="button ghost" href="#records" data-view="records">View Records</a>
+          </div>
+        </article>
+        <article class="hospital-visual" aria-label="Hospital illustration">
+          <div class="building">
+            <span>H</span>
+            <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+          </div>
+          <div class="pulse-line"></div>
+        </article>
+      </div>
+
+      <div class="stats-grid" id="statsGrid"></div>
+      <div class="dashboard-grid">
+        <section class="panel">
+          <div class="panel-head">
+            <h2>Admission Status</h2>
+            <span class="badge">Auto updated</span>
+          </div>
+          <div id="statusChart" class="bar-list"></div>
+        </section>
+        <section class="panel">
+          <div class="panel-head">
+            <h2>Doctor Workload</h2>
+            <span class="badge blue">By active cases</span>
+          </div>
+          <div id="doctorWorkload" class="workload-list"></div>
+        </section>
+      </div>
+    </section>
+
+    <section id="register" class="view">
+      <div class="section-title">
+        <p class="eyebrow">Register Patient</p>
+        <h2>Add patient, issue, doctor and appointment details.</h2>
+      </div>
+      <form id="patientForm" class="form-card">
+        <input type="hidden" id="editId">
+        <div class="form-grid">
+          <label>Name<input id="name" required placeholder="Patient name"></label>
+          <label>Age<input id="age" type="number" min="1" max="120" required placeholder="Age"></label>
+          <label>Gender<select id="gender" required><option>Male</option><option>Female</option><option>Other</option></select></label>
+          <label>Blood Group<select id="blood" required><option>O+</option><option>O-</option><option>A+</option><option>A-</option><option>B+</option><option>B-</option><option>AB+</option><option>AB-</option></select></label>
+          <label>Phone<input id="phone" required placeholder="Phone number"></label>
+          <label>Department<select id="dept" required></select></label>
+          <label>Doctor<select id="doctor" required></select></label>
+          <label>Ward<input id="ward" required placeholder="General / ICU / Emergency"></label>
+          <label>Status<select id="status"><option>Admitted</option><option>Under Observation</option><option>Emergency</option><option>Discharged</option></select></label>
+          <label>Appointment Date<input id="appointmentAt" type="datetime-local"></label>
+          <label class="span-2">Patient Issue<textarea id="issue" required placeholder="Example: Chest pain, fever, fracture, breathing issue"></textarea></label>
+          <label class="span-2">Address<textarea id="address" required placeholder="Patient address"></textarea></label>
+          <label class="span-2">Appointment Notes<textarea id="appointmentNotes" placeholder="Follow-up notes, tests, review instructions"></textarea></label>
+        </div>
+        <div class="form-actions">
+          <button class="button primary" type="submit">Save Patient</button>
+          <button class="button ghost" type="button" id="resetForm">Clear</button>
+        </div>
+      </form>
+    </section>
+
+    <section id="records" class="view">
+      <div class="section-title">
+        <p class="eyebrow">Patient List</p>
+        <h2>Search, view, edit and discharge records.</h2>
+      </div>
+      <div class="records-layout">
+        <div class="record-list" id="patientList"></div>
+        <aside class="detail-panel" id="detailPanel">
+          <div class="empty-state">
+            <strong>Select a patient</strong>
+            <span>Patient details, AI summary and actions will appear here.</span>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="ai" class="view">
+      <div class="section-title">
+        <p class="eyebrow">AI-Oriented Enhancements</p>
+        <h2>Rule-based AI demo for summaries, risk, search and analytics.</h2>
+      </div>
+      <div class="ai-grid" id="aiGrid"></div>
+    </section>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>

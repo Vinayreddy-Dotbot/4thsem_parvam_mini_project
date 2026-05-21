@@ -1,0 +1,122 @@
+<div class="home-wrapper">
+    <div class="hero-card">
+        <div class="hero-info">
+            <span class="hero-kicker"><i class="fa-solid fa-heart-pulse"></i> Smart hospital records</span>
+            <h1 class="hero-title">Hospital Patient Records</h1>
+            <p class="hero-subtitle">Register patients, assign doctors by department, manage admissions, discharge cases, and use smart search for patient lookup.</p>
+            <div class="quick-actions-row">
+                <a href="register" class="btn btn-primary"><i class="fa-solid fa-user-plus"></i> Register Patient</a>
+                <a href="list" class="btn btn-secondary"><i class="fa-solid fa-magnifying-glass"></i> Search Records</a>
+                <a href="ai-insights" class="btn btn-secondary"><i class="fa-solid fa-brain"></i> AI Insights</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="stats-grid">
+        <div class="stat-card">
+            <div class="stat-icon-wrapper blue-gradient">
+                <i class="fa-solid fa-hospital-user"></i>
+            </div>
+            <div class="stat-details">
+                <span class="stat-label">Patients</span>
+                <h2 class="stat-value">{{TOTAL_PATIENTS}}</h2>
+            </div>
+            <div class="stat-badge success">Auto ID</div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-icon-wrapper purple-gradient">
+                <i class="fa-solid fa-user-doctor"></i>
+            </div>
+            <div class="stat-details">
+                <span class="stat-label">Doctors</span>
+                <h2 class="stat-value">{{TOTAL_DOCTORS}}</h2>
+            </div>
+            <div class="stat-badge info">Dept FK</div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-icon-wrapper pink-gradient">
+                <i class="fa-solid fa-bed"></i>
+            </div>
+            <div class="stat-details">
+                <span class="stat-label">Active Admissions</span>
+                <h2 class="stat-value">{{ACTIVE_ADMISSIONS}}</h2>
+            </div>
+            <div class="stat-badge warning">Live Flow</div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-icon-wrapper green-gradient">
+                <i class="fa-solid fa-door-open"></i>
+            </div>
+            <div class="stat-details">
+                <span class="stat-label">Discharged</span>
+                <h2 class="stat-value">{{DISCHARGED_COUNT}}</h2>
+            </div>
+            <div class="stat-badge success">Closed</div>
+        </div>
+    </div>
+
+    <div class="quick-actions-section">
+        <h3 class="section-title">Core Actions</h3>
+        <div class="actions-grid">
+            <a href="register" class="action-btn-card">
+                <i class="fa-solid fa-user-plus action-icon font-blue"></i>
+                <div class="action-desc">
+                    <span class="action-title">Register Patient</span>
+                    <span class="action-meta">Create patient ID, admission row, doctor assignment, and ward status.</span>
+                </div>
+            </a>
+            <a href="list" class="action-btn-card">
+                <i class="fa-solid fa-magnifying-glass-chart action-icon font-purple"></i>
+                <div class="action-desc">
+                    <span class="action-title">Search Records</span>
+                    <span class="action-meta">Try: "Show admitted patients" or "Patients under Cardiology department".</span>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div class="analytics-grid">
+        <section class="analytics-panel">
+            <h3 class="section-title">Department Analytics</h3>
+            <table class="mini-table">
+                <tbody>{{DEPARTMENT_ROWS}}</tbody>
+            </table>
+        </section>
+
+        <section class="analytics-panel">
+            <h3 class="section-title">Doctor Workload</h3>
+            <table class="mini-table">
+                <tbody>{{WORKLOAD_ROWS}}</tbody>
+            </table>
+        </section>
+
+        <section class="analytics-panel">
+            <h3 class="section-title">Admission Status Flow</h3>
+            <table class="mini-table">
+                <tbody>{{STATUS_ROWS}}</tbody>
+            </table>
+        </section>
+    </div>
+
+    <section class="ai-section">
+        <div class="section-heading-row">
+            <h3 class="section-title">AI-Oriented Enhancements</h3>
+            <a href="ai-insights" class="btn btn-primary btn-mini"><i class="fa-solid fa-wand-magic-sparkles"></i> Open AI Dashboard</a>
+        </div>
+        <div class="ai-grid">
+            <a href="ai-insights" class="ai-card ai-card-link"><strong>AI Patient Health Summary Generator</strong><span>Builds a concise health report from patient, admission, and doctor records.</span></a>
+            <a href="ai-insights" class="ai-card ai-card-link"><strong>AI Disease Risk Prediction</strong><span>Scores each patient with age, status, blood group, ward, and department signals.</span></a>
+            <a href="list?search=Show%20admitted%20patients" class="ai-card ai-card-link"><strong>AI Smart Patient Search</strong><span>Try natural language search like "Show admitted patients" or "Patients under Cardiology".</span></a>
+            <a href="ai-insights" class="ai-card ai-card-link"><strong>AI Doctor Recommendation System</strong><span>Suggests department fit and follow-up action for each patient record.</span></a>
+            <a href="ai-insights" class="ai-card ai-card-link"><strong>AI Emergency Alert & Priority Detection</strong><span>Creates a working high-priority queue from active admissions.</span></a>
+            <a href="ai-insights" class="ai-card ai-card-link"><strong>AI Hospital Analytics Dashboard</strong><span>Summarizes risk, active admissions, discharge flow, and department pressure.</span></a>
+        </div>
+    </section>
+</div>
+
+<script>
+    document.getElementById('nav-home').classList.add('active');
+</script>

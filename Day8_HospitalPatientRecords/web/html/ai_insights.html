@@ -1,0 +1,117 @@
+<div class="ai-insights-page">
+    <section class="ai-insights-hero">
+        <div>
+            <span class="hero-kicker"><i class="fa-solid fa-brain"></i> Local AI triage engine</span>
+            <h1 class="hero-title">AI Hospital Insights</h1>
+            <p class="hero-subtitle">Live patient summaries, disease-risk scores, emergency priority detection, smart search, doctor recommendations, and hospital analytics generated from the database.</p>
+            <div class="quick-actions-row">
+                <a href="list?search=emergency" class="btn btn-primary"><i class="fa-solid fa-triangle-exclamation"></i> Priority Cases</a>
+                <a href="register" class="btn btn-secondary"><i class="fa-solid fa-user-plus"></i> Register Patient</a>
+            </div>
+        </div>
+    </section>
+
+    <div class="stats-grid ai-stat-grid">
+        <div class="stat-card danger-line">
+            <div class="stat-icon-wrapper pink-gradient">
+                <i class="fa-solid fa-bell"></i>
+            </div>
+            <div class="stat-details">
+                <span class="stat-label">High Priority</span>
+                <h2 class="stat-value">{{HIGH_PRIORITY_COUNT}}</h2>
+            </div>
+            <div class="stat-badge danger-text">AI Alert</div>
+        </div>
+
+        <div class="stat-card warning-line">
+            <div class="stat-icon-wrapper amber-gradient">
+                <i class="fa-solid fa-heart-pulse"></i>
+            </div>
+            <div class="stat-details">
+                <span class="stat-label">Needs Monitoring</span>
+                <h2 class="stat-value">{{MONITORING_COUNT}}</h2>
+            </div>
+            <div class="stat-badge warning-text">Watch</div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-icon-wrapper blue-gradient">
+                <i class="fa-solid fa-gauge-high"></i>
+            </div>
+            <div class="stat-details">
+                <span class="stat-label">Avg Risk Score</span>
+                <h2 class="stat-value">{{AVG_RISK_SCORE}}/100</h2>
+            </div>
+            <div class="stat-badge info">Predict</div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-icon-wrapper green-gradient">
+                <i class="fa-solid fa-bed-pulse"></i>
+            </div>
+            <div class="stat-details">
+                <span class="stat-label">Active Admissions</span>
+                <h2 class="stat-value">{{ACTIVE_ADMISSIONS}}</h2>
+            </div>
+            <div class="stat-badge success">Live</div>
+        </div>
+    </div>
+
+    <section class="smart-search-panel ai-control-panel">
+        <div class="section-heading-row">
+            <div>
+                <h3 class="section-title">AI Smart Patient Search</h3>
+                <p class="section-subtitle">Type natural language queries and the app converts them into database filters.</p>
+            </div>
+        </div>
+
+        <form action="list" method="GET" class="search-form smart-search-form">
+            <div class="search-box smart-search-box">
+                <i class="fa-solid fa-wand-magic-sparkles search-icon"></i>
+                <input type="text" name="search" class="search-input" placeholder="Patients under Cardiology department">
+                <button type="submit" class="btn btn-primary search-btn"><i class="fa-solid fa-filter"></i> Search</button>
+            </div>
+        </form>
+
+        <div class="shortcut-row">
+            <a href="list?search=Show%20admitted%20patients" class="shortcut-chip">Show admitted patients</a>
+            <a href="list?search=Patients%20under%20Cardiology%20department" class="shortcut-chip">Patients under Cardiology</a>
+            <a href="list?search=high%20priority%20emergency" class="shortcut-chip">High priority emergency</a>
+            <a href="list?search=appointment" class="shortcut-chip">Patients with appointment</a>
+            <a href="list?search=children%20patients" class="shortcut-chip">Child patients</a>
+            <a href="list?search=O-%20blood%20group" class="shortcut-chip">O- blood group</a>
+        </div>
+    </section>
+
+    <section class="analytics-panel insight-summary-panel ai-analytics-card">
+        <div class="section-heading-row">
+            <h3 class="section-title">AI Hospital Analytics Dashboard</h3>
+            <a href="home" class="btn btn-secondary btn-mini"><i class="fa-solid fa-chart-simple"></i> Main Dashboard</a>
+        </div>
+        <p class="analytics-summary-text">{{AI_ANALYTICS_SUMMARY}}</p>
+    </section>
+
+    <section class="analytics-panel ai-queue-panel">
+        <div class="section-heading-row">
+            <h3 class="section-title">AI Emergency Alert & Priority Detection</h3>
+            <a href="list?search=emergency" class="btn btn-danger btn-mini"><i class="fa-solid fa-bell"></i> Open Queue</a>
+        </div>
+        <div class="ai-emergency-stack">
+            {{EMERGENCY_ROWS}}
+        </div>
+    </section>
+
+    <section class="analytics-panel ai-analysis-panel">
+        <div class="section-heading-row">
+            <h3 class="section-title">AI Patient Summary & Doctor Recommendation</h3>
+            <a href="list" class="btn btn-secondary btn-mini"><i class="fa-solid fa-bed-pulse"></i> All Records</a>
+        </div>
+        <div class="ai-patient-card-grid">
+            {{AI_PATIENT_ROWS}}
+        </div>
+    </section>
+</div>
+
+<script>
+    document.getElementById('nav-ai').classList.add('active');
+</script>

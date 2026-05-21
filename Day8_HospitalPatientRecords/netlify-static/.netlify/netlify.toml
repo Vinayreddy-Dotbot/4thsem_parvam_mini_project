@@ -1,0 +1,40 @@
+redirectsOrigin = "config"
+plugins = []
+headers = []
+
+[functions]
+
+[functions."*"]
+
+[build]
+publish = "C:\\Users\\vr200\\Documents\\k Vinay Reddy\\Parvam_4th_sem\\day_8\\Day8_HospitalPatientRecords\\netlify-static"
+publishOrigin = "config"
+commandOrigin = "ui"
+base = "C:\\Users\\vr200\\Documents\\k Vinay Reddy\\Parvam_4th_sem\\day_8\\Day8_HospitalPatientRecords\\netlify-static"
+command = "cecil build"
+
+[build.environment]
+
+[build.processing]
+
+[build.processing.css]
+
+[build.processing.html]
+
+[build.processing.images]
+
+[build.processing.js]
+
+[build.services]
+
+[[redirects]]
+from = "/*"
+to = "/index.html"
+status = 200.0
+force = false
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]
